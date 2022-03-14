@@ -8,6 +8,6 @@ public class HomePageTest extends BaseTest {
 
     @Test
     public void testLogoIsDisplayed() {
-        Assert.assertTrue(homePage.checkLogo(), "Logo is not displayed");
+        Assert.assertTrue(homePage.checkLogo(), "Logo is not shown");
     }
 }
