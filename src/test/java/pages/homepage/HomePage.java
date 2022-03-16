@@ -17,6 +17,9 @@ public class HomePage extends BasePage {
     private By skipSignInButton = By.id("btn2");
     private By emailField = By.id("email");
     private By nextButton = By.id("enterimg");
+    private By signInEmailField = By.xpath("//input[@type='text']");
+    private By signInPassField = By.xpath("//input[@type='password']");
+    private By signInEnterButton = By.id("enterbtn");
 
     private HomePage() {
 
@@ -44,7 +47,7 @@ public class HomePage extends BasePage {
         driver.findElement(skipSignInButton).click();
     }
 
-    public void clickBack () {
+    public void clickBack() {
         LOG.info("Go back");
         driver.navigate().back();
     }
@@ -57,5 +60,19 @@ public class HomePage extends BasePage {
     public void clickSubmitButton() {
         LOG.info("Click submit");
         driver.findElement(nextButton).click();
+    }
+
+    public void signInFields(String email, String pass) {
+        LOG.info("Type email");
+        driver.findElement(signInEmailField).sendKeys(email);
+        LOG.info("Type password");
+        driver.findElement(signInPassField).sendKeys(pass);
+        LOG.info("Click Enter button");
+        driver.findElement(signInEnterButton).click();
+    }
+
+    public boolean checkLogInMessage() {
+        LOG.info("Invalid User Name or PassWord");
+        return driver.findElement(logo).isDisplayed();
     }
 }

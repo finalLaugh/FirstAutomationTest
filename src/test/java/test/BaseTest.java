@@ -8,13 +8,12 @@ import pages.homepage.HomePage;
 public class BaseTest {
 
     public HomePage homePage = HomePage.getInstance();
+
     @BeforeSuite
     public void setUp() {
         BasePage.setUp();
     }
 
-    @AfterSuite
-    public void tearDown() {
-        BasePage.tearDown();
-    }
+    /*@AfterSuite
+    public void tearDown() { BasePage.tearDown(); }*/
 }

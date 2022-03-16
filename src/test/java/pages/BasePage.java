@@ -21,9 +21,16 @@ public class BasePage {
 
     }
 
-    public static void tearDown () {
+    public static void tearDown() {
         LOG.info("Close the browser");
         driver.quit();
     }
 
+    public static void sleep(long ms) {
+        try {
+            Thread.sleep(ms);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
 }
