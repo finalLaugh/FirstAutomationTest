@@ -9,7 +9,7 @@ import static pages.BasePage.sleep;
 public class HomePageTest extends BaseTest {
 
     @Test
-    public void testLogoIsDisplayed() throws InterruptedException {
+    public void testLogoIsDisplayed() {
         Assert.assertTrue(homePage.checkLogo(), "Logo is not shown");
         sleep(2000);
 
@@ -20,7 +20,7 @@ public class HomePageTest extends BaseTest {
     }
 
     @Test
-    public void signInFunctionality() throws InterruptedException {
+    public void signInFunctionality() {
         homePage.clickSignInButton();
         sleep(2000);
         homePage.signInFields("ffxii23@yahoo.com", "shibuyastation");
