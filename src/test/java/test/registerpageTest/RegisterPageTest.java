@@ -10,8 +10,8 @@ public class RegisterPageTest extends BaseTest {
     @Test
     public void registerFields() {
         registerPage.clickSkipSignInButton();
-        sleep(1000);
+        //sleep(1000);
         registerPage.registerFieldsCompletion();
-        sleep(2000);
+
     }
 }
