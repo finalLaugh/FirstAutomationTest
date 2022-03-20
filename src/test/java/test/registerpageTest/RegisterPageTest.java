@@ -1,8 +1,10 @@
 package test.registerpageTest;
 
+import org.openqa.selenium.JavascriptExecutor;
 import org.testng.annotations.Test;
 import test.BaseTest;
 
+import static pages.BasePage.driver;
 import static pages.BasePage.sleep;
 
 public class RegisterPageTest extends BaseTest {

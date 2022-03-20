@@ -1,6 +1,10 @@
 package pages.registerpage;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import pages.BasePage;
@@ -43,7 +47,7 @@ public class RegisterPage extends BasePage {
     private final By dateOfBirthDaySelect = By.xpath("//option[@value='3']");
     private final By passwordField = By.xpath("//input[@id='firstpassword']");
     private final By confirmPasswordField = By.xpath("//input[@id='secondpassword']");
-    private final By submitButton = By.id("submitbtn");
+    private final By submitButton = By.xpath("//button[@id='submitbtn']");
     private final By refreshButton = By.id("Button1");
 
     public void clickSkipSignInButton() {
@@ -83,9 +87,14 @@ public class RegisterPage extends BasePage {
         driver.findElement(passwordField).sendKeys("katana");
         driver.findElement(confirmPasswordField).sendKeys("katana");
         LOG.info("Click Submit button");
+        //Scroll element into view using JavaScriptExecutor _________________________________
+        //((JavascriptExecutor) driver).executeScript("arguments[0].click();", submitButton);
+        //___________________________________________________________________________________
+        driver.findElement(submitButton).sendKeys(Keys.PAGE_DOWN);
         driver.findElement(submitButton).click();
         sleep(2000);
         LOG.info("Click Refresh button");
+        driver.findElement(refreshButton).sendKeys(Keys.TAB);
         driver.findElement(refreshButton).click();
 
 
