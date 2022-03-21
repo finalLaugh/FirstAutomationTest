@@ -1,5 +1,6 @@
 package pages;
 
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.slf4j.Logger;
@@ -14,7 +15,7 @@ public class BasePage {
         LOG.info("Start test");
         System.setProperty("webdriver.chrome.driver", "C://Webdrivers/chromedriver.exe");
         driver = new ChromeDriver();
-        String url = "http://demo.automationtesting.in/Index.html";
+        String url = "http://demo.automationtesting.in/Alerts.html";
         driver.get(url);
         LOG.info("Open browser");
         driver.manage().window().maximize();

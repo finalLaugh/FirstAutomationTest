@@ -94,7 +94,6 @@ public class RegisterPage extends BasePage {
         driver.findElement(submitButton).click();
         sleep(2000);
         LOG.info("Click Refresh button");
-        driver.findElement(refreshButton).sendKeys(Keys.TAB);
         driver.findElement(refreshButton).click();
 
 
