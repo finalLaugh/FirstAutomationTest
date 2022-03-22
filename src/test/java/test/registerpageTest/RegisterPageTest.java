@@ -9,6 +9,7 @@ import static pages.BasePage.sleep;
 
 public class RegisterPageTest extends BaseTest {
 
+
     @Test
     public void registerFields() {
         registerPage.clickSkipSignInButton();

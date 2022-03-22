@@ -15,7 +15,7 @@ public class BasePage {
         LOG.info("Start test");
         System.setProperty("webdriver.chrome.driver", "C://Webdrivers/chromedriver.exe");
         driver = new ChromeDriver();
-        String url = "http://demo.automationtesting.in/Alerts.html";
+        String url = "http://demo.automationtesting.in";
         driver.get(url);
         LOG.info("Open browser");
         driver.manage().window().maximize();

@@ -49,6 +49,7 @@ public class RegisterPage extends BasePage {
     private final By confirmPasswordField = By.xpath("//input[@id='secondpassword']");
     private final By submitButton = By.xpath("//button[@id='submitbtn']");
     private final By refreshButton = By.id("Button1");
+    private final By clickChooseFile = By.xpath("//input[@type='file']");
 
     public void clickSkipSignInButton() {
         LOG.info("Click skip Sign in button");
@@ -56,7 +57,7 @@ public class RegisterPage extends BasePage {
     }
 
     public void registerFieldsCompletion() {
-        LOG.info("Type in first name");
+        /*LOG.info("Type in first name");
         driver.findElement(firstNameField).sendKeys("Dragos");
         LOG.info("Type in last name");
         driver.findElement(lastNameField).sendKeys("Cas");
@@ -95,7 +96,9 @@ public class RegisterPage extends BasePage {
         sleep(2000);
         LOG.info("Click Refresh button");
         driver.findElement(refreshButton).click();
-
-
+        sleep(2000);*/
+        LOG.info("Click Choose file and upload an image");
+        String file = System.getProperty("user.dir");
+        driver.findElement(clickChooseFile).sendKeys(file + "\\src\\test\\files\\7693.jpg");
     }
 }
