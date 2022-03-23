@@ -4,17 +4,18 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.testng.annotations.Test;
 import test.BaseTest;
 
-import static pages.BasePage.driver;
-import static pages.BasePage.sleep;
+import static pages.BasePage.*;
 
 public class RegisterPageTest extends BaseTest {
 
+    private String newUrl = getBaseUrl() + "Register.html";
 
     @Test
     public void registerFields() {
-        registerPage.clickSkipSignInButton();
+        driver.get(newUrl);
         //sleep(1000);
+        //registerPage.scrollToElement();
         registerPage.registerFieldsCompletion();
-
+        //registerPage.setDateOfBirth("1987", "December", "3");
     }
 }

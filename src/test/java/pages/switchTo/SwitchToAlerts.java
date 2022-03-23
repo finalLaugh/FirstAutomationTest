@@ -1,15 +1,9 @@
-package pages.switchToAlerts;
+package pages.switchTo;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import pages.BasePage;
-import pages.registerpage.RegisterPage;
-
-import javax.swing.*;
 
 public class SwitchToAlerts extends BasePage {
     private static final Logger LOG = LoggerFactory.getLogger(SwitchToAlerts.class);

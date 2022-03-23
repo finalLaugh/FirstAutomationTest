@@ -1,11 +1,10 @@
 package test;
 
-import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
 import pages.BasePage;
 import pages.homepage.HomePage;
 import pages.registerpage.RegisterPage;
-import pages.switchToAlerts.SwitchToAlerts;
+import pages.switchTo.SwitchToAlerts;
 
 public class BaseTest {
 

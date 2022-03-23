@@ -4,7 +4,9 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Action;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.Select;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import pages.BasePage;
@@ -39,6 +41,9 @@ public class RegisterPage extends BasePage {
     private final By country = By.id("countries");
     private final By countryClick = By.xpath("//span[@role='combobox']");
     private final By countrySelect = By.xpath("//li[@class='select2-results__option' and contains(text(),'Japan')]");
+    String selectYear = "yearbox";
+    String selectMonth = "//select[@ng-model='monthbox']";
+    String selectDay = "daybox";
     private final By dateOfBirthYearClick = By.id("yearbox");
     private final By dateOfBirthYearSelect = By.xpath("//option[@value='1987']");
     private final By dateOfBirthMonthClick = By.xpath("//select[@ng-model='monthbox']");
@@ -57,7 +62,7 @@ public class RegisterPage extends BasePage {
     }
 
     public void registerFieldsCompletion() {
-        /*LOG.info("Type in first name");
+        LOG.info("Type in first name");
         driver.findElement(firstNameField).sendKeys("Dragos");
         LOG.info("Type in last name");
         driver.findElement(lastNameField).sendKeys("Cas");
@@ -88,17 +93,31 @@ public class RegisterPage extends BasePage {
         driver.findElement(passwordField).sendKeys("katana");
         driver.findElement(confirmPasswordField).sendKeys("katana");
         LOG.info("Click Submit button");
-        //Scroll element into view using JavaScriptExecutor _________________________________
-        //((JavascriptExecutor) driver).executeScript("arguments[0].click();", submitButton);
-        //___________________________________________________________________________________
-        driver.findElement(submitButton).sendKeys(Keys.PAGE_DOWN);
+        //driver.findElement(submitButton).sendKeys(Keys.PAGE_DOWN);
         driver.findElement(submitButton).click();
         sleep(2000);
         LOG.info("Click Refresh button");
         driver.findElement(refreshButton).click();
-        sleep(2000);*/
+        sleep(2000);
         LOG.info("Click Choose file and upload an image");
         String file = System.getProperty("user.dir");
-        driver.findElement(clickChooseFile).sendKeys(file + "\\src\\test\\files\\7693.jpg");
+        driver.findElement(clickChooseFile).sendKeys(file + "\\src\\test\\files\\Dragos_avatar.jpeg");
     }
+
+    public void setDateOfBirth(String year, String month, String day) {
+        LOG.info("Set date of birth");
+        Select newYear = new Select(driver.findElement(By.id(selectYear)));
+        newYear.selectByValue(year);
+        Select newMonth = new Select(driver.findElement(By.xpath(selectMonth)));
+        newMonth.selectByValue(month);
+        Select newDay = new Select(driver.findElement(By.id(selectDay)));
+        newDay.selectByValue(day);
+    }
+
+   /* public void scrollToElement() {
+        WebElement element = driver.findElement(submitButton);
+        Actions actions = new Actions(driver);
+        actions.moveToElement(element);
+        actions.perform();
+    }*/
 }
