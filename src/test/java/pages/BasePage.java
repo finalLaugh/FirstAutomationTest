@@ -14,14 +14,14 @@ public class BasePage {
 
     public static void setUp() {
         LOG.info("Start test");
-        System.setProperty("webdriver.chrome.driver", "C://Webdrivers/chromedriver.exe");
+        //System.setProperty("webdriver.chrome.driver", "C://Webdrivers/chromedriver.exe");
         driver = new ChromeDriver();
+        /*Dimension dimension = new Dimension(1366, 768);
+        driver.manage().window().setSize(dimension);*/
+        driver.manage().window().maximize();
         String url = "http://demo.automationtesting.in";
         driver.get(url);
         LOG.info("Open browser");
-        Dimension dimension = new Dimension(1366, 768);
-        driver.manage().window().setSize(dimension);
-        //driver.manage().window().maximize();
 
     }
 
