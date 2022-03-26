@@ -7,6 +7,8 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.util.Set;
+
 public class BasePage {
     private static final Logger LOG = LoggerFactory.getLogger(BasePage.class);
 
@@ -48,5 +50,19 @@ public class BasePage {
             return baseUrl.replace("Index.html", "");
         }
         return baseUrl;
+    }
+    public static void tabWindowsClose() {
+        LOG.info("Close tab/window and return to the home tab/window");
+        String parent = driver.getWindowHandle();
+        Set<String> allWindows = driver.getWindowHandles();
+        int count = allWindows.size();
+        for (String child : allWindows) {
+            if (!parent.equalsIgnoreCase(child)) {
+                driver.switchTo().window(child);
+                sleep(1000);
+                driver.close();
+            }
+        }
+        driver.switchTo().window(parent);
     }
 }
