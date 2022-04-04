@@ -51,6 +51,7 @@ public class BasePage {
         }
         return baseUrl;
     }
+
     public static void tabWindowsClose() {
         LOG.info("Close tab/window and return to the home tab/window");
         String parent = driver.getWindowHandle();
@@ -64,5 +65,16 @@ public class BasePage {
             }
         }
         driver.switchTo().window(parent);
+    }
+
+    public void switchToNewTabWindow(){
+        String originalWindow = driver.getWindowHandle();
+        for (String windowHandle : driver.getWindowHandles()){
+            if(!originalWindow.contentEquals(windowHandle)){
+                driver.switchTo().window(windowHandle);
+                break;
+            }
+        }
+        driver.switchTo().window(originalWindow);
     }
 }

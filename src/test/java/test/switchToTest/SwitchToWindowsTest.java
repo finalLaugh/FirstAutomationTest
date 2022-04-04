@@ -1,6 +1,7 @@
 package test.switchToTest;
 
 import org.testng.annotations.Test;
+import pages.switchTo.SwitchToWindows;
 import test.BaseTest;
 
 import static pages.BasePage.*;
@@ -12,15 +13,14 @@ public class SwitchToWindowsTest extends BaseTest {
     @Test
     public void switchToDropDownMenuFunc () {
         driver.get(newUrl);
-        switchToWindows.switchToDropDownMenuWindows();
+        SwitchToWindows.switchToDropDownMenuWindows();
         sleep(1000);
-        switchToWindows.tabWindowsClose();
-        switchToWindows.switchToDropDownMenuWindows2();
+        SwitchToWindows.tabWindowsClose();
+        SwitchToWindows.switchToDropDownMenuWindows2();
         sleep(1000);
-        switchToWindows.tabWindowsClose();
-        switchToWindows.switchToDropDownMenuWindows3();
+        SwitchToWindows.tabWindowsClose();
+        SwitchToWindows.switchToDropDownMenuWindows3();
         sleep(1000);
-        switchToWindows.tabWindowsClose();
-
+        SwitchToWindows.tabWindowsClose();
     }
 }

@@ -20,7 +20,8 @@ public class SwitchToAlerts extends BasePage {
     private final By skipSignInButton = By.id("btn2");
     private final By switchToDropDownHover = By.xpath("//a[text()='SwitchTo']");
     private final By switchToDropDownAlertsClick = By.xpath("//a[text()='Alerts']");
-    private final By clickAlertWithOk = By.xpath("//button[@class='btn btn-danger']");
+    private final By clickAlertWithOk = By.xpath("//a[@href='#OKTab']");
+    private final By clickButtonDisplayAlertBox = By.xpath("//button[@class='btn btn-danger']");
     private final By clickAlertWithOkAndCancel = By.xpath("//a[@href='#CancelTab']");
     private final By clickButtonConfirmBox = By.className("btn-primary");
     private final By clickAlertWithTextbox = By.xpath("//a[@href='#Textbox']");
@@ -40,7 +41,7 @@ public class SwitchToAlerts extends BasePage {
         Actions actions = new Actions(driver);
         actions.moveToElement(driver.findElement(By.tagName("body")), -1, -1).click();*/
         LOG.info("Click on 'click the button to display an alert box'");
-        driver.findElement(clickAlertWithOk).click();
+        driver.findElement(clickButtonDisplayAlertBox).click();
         sleep(2000);
 
         LOG.info("Click OK on the alert box");
